@@ -53,7 +53,7 @@ y_desenvolvimento = y
 ################  FIM DA PARTE DO TREINAMENTO COM OS DADOS  SOMENTE ANTES DE ABRIL DE 2020  #########################
 
 
-# Undersample and plot imbalanced dataset with the neighborhood cleaning rule
+# Undersample
 from collections import Counter
 from matplotlib import pyplot
 from numpy import where
