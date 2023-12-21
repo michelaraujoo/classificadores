@@ -1,4 +1,3 @@
-
 ######################################
 # Importando as libraries
 ######################################
@@ -15,16 +14,16 @@ from collections import Counter
 from sklearn.model_selection import cross_val_score
 
 
+
 ######################################
 # Importando o dataset
 ######################################
-#dataset = pd.read_csv("triagem_online.csv")
-dataset = pd.read_csv("dataset_ciasc_375180_desbalanceado.csv")
+#dataset = pd.read_csv("https://raw.githubusercontent.com/michelaraujoo/classificadores/main/content/sample_data/triagem_online.csv")
+dataset = pd.read_csv("https://raw.githubusercontent.com/michelaraujoo/classificadores/main/triagem_online.csv")
+#dataset = pd.read_csv("https://raw.githubusercontent.com/michelaraujoo/classificadores/main/dataset_ciasc_375180_desbalanceado.csv")
 dataset = dataset.dropna()
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
-
-
 
 ######################################
 # Separar dados em Desenvolvimento e Testes
@@ -34,9 +33,10 @@ X_desenvolvimento, X_testes, y_desenvolvimento, y_testes = ms.train_test_split(X
 
 # Gravando a tabela de testes em arquivo para testar o desempenho do Triagem On-Line posteriormente.
 panda_va1 = pd.DataFrame(data=X_testes)
-panda_va1.to_csv("/home/guest/PycharmProjects/regressao_logistica/arquivo1.csv", index=False)
+panda_va1.to_csv("/content/sample_data/arquivo1.csv", index=False)
 panda_va2 = pd.DataFrame(data=y_testes)
-panda_va2.to_csv("/home/guest/PycharmProjects/regressao_logistica/arquivo2.csv", index=False)
+panda_va2.to_csv("/content/sample_data/arquivo2.csv", index=False)
+
 
 
 ########  A PARTIR DE AGORA INICIA A PARTE DO TREINAMENTO COM OS DADOS  SOMENTE ANTES DE ABRIL DE 2020  #############
